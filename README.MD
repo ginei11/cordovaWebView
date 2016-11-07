@@ -14,7 +14,7 @@ Ejemplos:
 var success  = function() { alert('se abrio la web');  }
 var fail = function() { alert('fallo abrir la web'); }
 
-netcom.timer.iniciarTimer1(success, failt, "https://github.com/", "webAppName");
+webViewNative.open(success, failt, "https://github.com/", "webAppName");
 
 
 
