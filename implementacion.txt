@@ -1,0 +1,24 @@
+/**
+*@autor Carlos Reyes
+*@param timer  valor de tiempo
+*@param actividadDestino actividad a abrir cuando se inicia el celular
+*@return sucestimer  funcion de retorno cuando se termina el conteo
+*@return failtimer funcion de retorno cuando falla iniciar el conteo
+*/
+netcom.timer.iniciarTimer1(sucestimer, failtimer, timer, actividadDestino);
+
+
+
+
+Ejemplos:
+
+var sucestimer  = function() { alert('conteo fin');  }
+   var failtimer = function() { alert('fallo iniciar el conteo'); }
+
+netcom.timer.iniciarTimer1(sucestimer, failtimer, "10", "co.com.netcom.MainActivity");
+netcom.timer.iniciarTimer2(sucestimer, failtimer, "10", "co.com.netcom.MainActivity");
+netcom.timer.iniciarCountDown(sucestimer, failtimer,"10");
+netcom.timer.detenerTimer1();
+netcom.timer.detenerTimer2();
+
+

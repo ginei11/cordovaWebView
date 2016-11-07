@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.ingidear.webview"
+        version="1.0.0">
+    <engines>
+        <engine name="cordova-android" version=">=3.0.0"/>
+    </engines>
+    
+    <name>WebView</name>
+    <description>Este plugin abre una pagina web en una app nativa</description>
+    <author>Carlos Reyes</author>
+    <keywords>android, webview, nativa</keywords>
+    <license>MIT</license>
+	
+    <platform name="android">
+
+		<js-module src="www/com.ingidear.webview/www/webview.js" name="webview">
+			<clobbers target="ingidear.webview" />
+		</js-module>
+		
+		 <source-file src="src/android/com/ingidear/plugin/webview/CordovaWebView.java" target-dir="src/com/ingidear/webview/" /> 
+		 <source-file src="src/android/com/ingidear/plugin/webview/WebViewActivity.java" target-dir="src/com/ingidear/webview/" />
+		 
+		 <source-file src="res/android/layout/activity_webview.xml" target-dir="res/layout" />
+         <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="webview" >
+                <param name="android-package" value="com.ingidear.webview.WebViewActivity"/>
+            </feature>
+        </config-file>
+		
+        
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			    <activity android:name=".MainActivity"/>
+		</config-file>
+	
+    </platform>
+
+</plugin>
+
