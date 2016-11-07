@@ -17,7 +17,7 @@
     <platform name="android">
 
 		<js-module src="www/com.ingidear.webview/www/webview.js" name="webview">
-			<clobbers target="ingidear.webview" />
+			<clobbers target="webViewNative" />
 		</js-module>
 		
 		 <source-file src="src/android/com/ingidear/plugin/webview/CordovaWebView.java" target-dir="src/com/ingidear/webview/" /> 

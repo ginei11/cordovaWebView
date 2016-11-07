@@ -6,7 +6,7 @@ var platform = require('cordova/platform');
  };
 
 
-WebViewNative.prototype.iniciarTimer1 = function(successCallback, errorCallback, timer, actividadDestino){
+WebViewNative.prototype.open = function(successCallback, errorCallback, url, nombreApp){
 				  cordova.exec(
 						successCallback,
 						errorCallback,
