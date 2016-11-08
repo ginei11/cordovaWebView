@@ -9,6 +9,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.app.Application;
+import android.content.res.Resources;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 
 public class WebViewActivity extends AppCompatActivity {
 
@@ -17,7 +22,13 @@ public class WebViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_webview);
+
+        Application app=cordova.getActivity().getApplication();
+        String package_name = app.getPackageName();
+        Resources resources = app.getResources();
+        int ic = resources.getIdentifier("activity_webview", "layout", package_name);
+
+        setContentView(ic);
 
         WebView webView = (WebView) this.findViewById(R.id.webview);
 

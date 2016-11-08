@@ -34,7 +34,7 @@ public class CordovaWebView extends CordovaPlugin {
            
 		        Bundle datos = new Bundle();
                 Intent activityma = new Intent().setClass(
-                        CordovaWebView.this, WebViewActivity.class);
+                        context, WebViewActivity.class);
 
                 datos.putSerializable("Url", url);
                 datos.putSerializable("NombreApp", nombreApp);
