@@ -9,7 +9,8 @@ import org.json.JSONException;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
-
+import android.os.Bundle;
+import android.content.Intent;
 
 
 /**
