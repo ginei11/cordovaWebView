@@ -1,4 +1,4 @@
-package co.com.netcom.plugin.backgroundtimer;
+package com.ingidear.webview;
 
 import android.content.Context;
 import android.content.Intent;
