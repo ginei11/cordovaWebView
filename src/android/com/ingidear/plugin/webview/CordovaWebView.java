@@ -20,23 +20,33 @@ import org.apache.cordova.PluginResult;
  */
 public class CordovaWebView extends CordovaPlugin {
 
-    public static CallbackContext callbackContext = null;
     @Override
     public boolean execute(final String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         Log.d("[CordovaWebView]", "Inicio: " + action);
-        this.callbackContext = callbackContext;
+    
         Context context=this.cordova.getActivity().getApplicationContext();
-
+		String url = args.getString(0);
+		String nombreApp = args.getString(1);
+		String colorApp = args.getString(2);
 
         if (action.equals("abrirWeb")) {
            
-            mPreferencias.setSetBoot2(false);
-            cordova.getActivity().stopService(new Intent(cordova.getActivity(), ServicioTimer2.class));
-            ServicioTimer2.waitTimer2.cancel();
-            PluginResult result = new PluginResult(PluginResult.Status.OK, "ok");
-            result.setKeepCallback(false);
-            BackGroundTimer.callbackContext.sendPluginResult(result);;
-            return true;
+		        Bundle datos = new Bundle();
+                Intent activityma = new Intent().setClass(
+                        CordovaWebView.this, WebViewActivity.class);
+
+                datos.putSerializable("Url", url);
+                datos.putSerializable("NombreApp", nombreApp);
+                datos.putSerializable("colorBar", colorApp);
+                activityma.putExtras(datos);
+
+                context.startActivity(activityma);
+           
+          
+				PluginResult result = new PluginResult(PluginResult.Status.OK, "ok");
+				result.setKeepCallback(false);
+				callbackContext.sendPluginResult(result);;
+				return true;
 			}
 	}
 			
