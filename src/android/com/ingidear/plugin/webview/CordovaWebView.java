@@ -49,6 +49,7 @@ public class CordovaWebView extends CordovaPlugin {
 				callbackContext.sendPluginResult(result);;
 				return true;
 			}
+        return  false;
 	}
 			
 
