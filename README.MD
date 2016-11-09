@@ -4,17 +4,17 @@
 * @fail funcion de retorno fail
 * @url url a abrir
 * @fail nombre a mostrar
+* @color color a mostrar en la app bar
 */
-webViewNative.open(success, fail, url, nombreApp);
+webViewNative.open(success, fail, url, nombreApp, color);
 
 
-
-Ejemplos:
+Ejemplo:
 
 var success  = function() { alert('se abrio la web');  }
 var fail = function() { alert('fallo abrir la web'); }
 
-webViewNative.open(success, failt, "https://github.com/", "webAppName");
+webViewNative.open(success, fail, "https://github.com/", "webAppName", "#ffffc900");
 
 
 
