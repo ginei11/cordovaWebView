@@ -1,5 +1,8 @@
+
+cordova plugin add https://github.com/ginei11/cordovaWebView
+
+
 /**
-*@autor Carlos Reyes
 * @success funcion de retorno satisfactorio
 * @fail funcion de retorno fail
 * @url url a abrir
