@@ -22,7 +22,8 @@
 		
 		 <source-file src="src/android/com/ingidear/plugin/webview/CordovaWebView.java" target-dir="src/com/ingidear/webview/" /> 
 		 <source-file src="src/android/com/ingidear/plugin/webview/WebViewActivity.java" target-dir="src/com/ingidear/webview/" />
-		 
+		 <source-file src="src/android/com/ingidear/plugin/webview/utilidades/FakeR.java" target-dir="src/com/ingidear/webview/utilidades" />
+
 		 <source-file src="res/android/layout/activity_webview.xml" target-dir="res/layout" />
          <config-file target="res/xml/config.xml" parent="/*">
             <feature name="webview" >
@@ -30,7 +31,11 @@
             </feature>
         </config-file>
 		
-        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.INTERNET" />
+		</config-file>
+		
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
 			    <activity android:name="com.ingidear.webview.WebViewActivity"/>
 		</config-file>
