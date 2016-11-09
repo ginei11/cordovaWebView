@@ -40,7 +40,7 @@ public class CordovaWebView extends CordovaPlugin {
                 datos.putSerializable("NombreApp", nombreApp);
                 datos.putSerializable("colorBar", colorApp);
                 activityma.putExtras(datos);
-
+                activityma.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(activityma);
            
           
