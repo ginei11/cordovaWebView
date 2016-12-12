@@ -29,6 +29,7 @@ public class CordovaWebView extends CordovaPlugin {
 		String url = args.getString(0);
 		String nombreApp = args.getString(1);
 		String colorApp = args.getString(2);
+		String colorText = args.getString(3);
 
         if (action.equals("abrirWeb")) {
            
@@ -39,6 +40,7 @@ public class CordovaWebView extends CordovaPlugin {
                 datos.putSerializable("Url", url);
                 datos.putSerializable("NombreApp", nombreApp);
                 datos.putSerializable("colorBar", colorApp);
+                datos.putSerializable("colorText", colorText);
                 activityma.putExtras(datos);
                 activityma.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(activityma);

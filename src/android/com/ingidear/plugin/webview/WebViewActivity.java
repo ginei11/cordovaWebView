@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,6 +43,7 @@ public class WebViewActivity extends Activity {
         String url = "https://www.google.com";
         String nombreApp = "WebViewPlugin";
         String color = "#FFff0000";
+        String colorText = "#FF000000";
         Bundle datos;
         datos = getIntent().getExtras();
 
@@ -50,6 +52,7 @@ public class WebViewActivity extends Activity {
                 url = datos.getString("Url");
                 nombreApp = datos.getString("NombreApp");
                 color = datos.getString("colorBar");
+                colorText = datos.getString("colorText");
 
             } catch (NullPointerException e) {
                 Log.e(TAG, "Error " + e);
@@ -67,7 +70,7 @@ public class WebViewActivity extends Activity {
                 getActionBar().setHomeButtonEnabled(true);
                 getActionBar().setDisplayHomeAsUpEnabled(true);
                 getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor(color)));
-                getActionBar().setTitle(nombreApp);
+                getActionBar().setTitle(Html.fromHtml("<font color=\""+colorText+"\">" +nombreApp + "</font>"));
             }
 
         } catch (Exception ex) {
