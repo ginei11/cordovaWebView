@@ -6,7 +6,7 @@ var platform = require('cordova/platform');
  };
 
 
-WebViewNative.prototype.open = function(successCallback, errorCallback, url, nombreApp, colorApp){
+WebViewNative.prototype.open = function(successCallback, errorCallback, url, nombreApp, colorApp,colorText){
 				  cordova.exec(
 						successCallback,
 						errorCallback,
@@ -15,7 +15,8 @@ WebViewNative.prototype.open = function(successCallback, errorCallback, url, nom
 						[
 						url,
 						nombreApp,
-						colorApp
+						colorApp,
+						colorText
 						]
 					);
 				  };
